@@ -150,6 +150,7 @@ final class IMAPSession {
         capabilities = checks.reduce([]) { (memo: IMAPCapability, checkAndCap: CheckAndCap) -> IMAPCapability in
             return checkAndCap.check(imap).boolValue ? memo.union(checkAndCap.cap) : memo
         }
+        print("Capabilities: \(capabilities)")
     }
     
     func login() throws {
