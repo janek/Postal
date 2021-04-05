@@ -11,6 +11,7 @@ import libetpan
 
 extension IMAPSession {
     func testIdle() {
-        print("sess test idle")
+        let hasIdle = mailimap_has_idle(imap)
+        print(hasIdle)
     }
 }
