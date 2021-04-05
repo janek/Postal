@@ -150,6 +150,10 @@ final class IMAPSession {
         capabilities = checks.reduce([]) { (memo: IMAPCapability, checkAndCap: CheckAndCap) -> IMAPCapability in
             return checkAndCap.check(imap).boolValue ? memo.union(checkAndCap.cap) : memo
         }
+        
+        assert(capabilities.contains(.Idle), "The email provider does not support IMAP IDLE mode")
+        print("Capabilities: \(capabilities)")
+        // TODO: check if Idle is in capabilities and throw an error otherwise
     }
     
     func login() throws {

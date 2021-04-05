@@ -263,6 +263,14 @@ public extension Postal {
     }
 }
 
+// MARK: - IMAP Idle
+public extension Postal {
+    func testIdle() {
+        // TODO: should this be in doAsync?
+        self.session.testIdle()
+    }
+}
+
 // MARK: - Privates
 
 private extension Postal {
